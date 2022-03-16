@@ -1,0 +1,32 @@
+ 
+ <div class="container">
+    <table class="table table-success" #table>
+
+        <tr>
+            <th>One</th>
+            <th>Two</th>
+            <th>Three</th>
+        </tr>
+    <tr *ngFor="let d of getData">
+        <td>{{d.hobby}}</td>
+        <td>{{d.strength}}</td>
+        <td>{{d.weakness}}</td>
+    </tr>
+    </table> 
+    
+ </div> 
+ 
+
+<button (click)="getD()">getD</button>
+<button (click)="downloadPdf()">download pdf</button>
+<!-- 
+<ul>
+    <li>{{getData | json}}</li>
+    <li></li>
+</ul> -->
+<!-- 
+<ul *ngFor="let d of getData">
+ <li>{{d.hobby}}</li>
+ <li>{{d.strength}}</li>
+ <li>{{d.weakness}}</li>
+</ul> -->

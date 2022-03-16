@@ -1,0 +1,20 @@
+<div class="container">
+
+    <form #form="ngForm" (ngSubmit)="forward(form)">
+        <label>Hobbies</label>
+        <input type="text" class="form-control" ngModel name="hobby" required/>
+        <label>Strength</label>
+        <input type="text" class="form-control" ngModel name="strength" required/>
+        <label>Weakness</label>
+        <input type="text" class="form-control" ngModel name="weakness" required />
+        <label>comments</label>
+        <textarea name="comment" id="" cols="30" rows="3" class="form-control" required></textarea>
+        <div class="container my-3">
+            <button class="btn btn-primary" (click)="back()">Previous</button>
+            <button type="submit" class="btn btn-primary" id="next">Next</button>
+        </div>
+    </form>
+
+</div>
+
+<button (click)="np()">next page</button>

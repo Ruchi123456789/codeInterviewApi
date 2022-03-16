@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="mt-3">User Profile</h2>
+  </div>
+
+  <div>
+    <select class="browser-default custom-select" [(ngModel)]="val" (change)="a($event)" name="sel" #sel>
+      {{val}}
+      <option hidden >Select username</option>
+      <option *ngFor="let user of (users|async)">{{user.username}}</option>
+    </select>
+  </div>
+  
+   <div id="loader" [hidden]="!toggleShowHide"></div> 
+  <div [hidden]="toggleShowHide">
+    <ul class="list-group" *ngFor="let user of (users |async )| filter : val">
+      <li class="list-group-item">{{user.username }}</li>
+      <li class="list-group-item">{{user.name }}</li>
+      <li class="list-group-item">{{user.email}}</li>
+      <li class="list-group-item">{{user.id}}</li>
+    </ul>
+  </div>
+  
+  <div class="container my-3">
+    <button class="btn btn-primary">Previous</button>
+     <button class="btn btn-primary" id="next" (click)="forward()">Next</button>
+  </div>
